@@ -42,16 +42,14 @@ public class JdbcCustomerDAO extends JdbcDaoSupport implements CustomerDAO
 			"(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
 			
 		getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
-			
-			@Override
+
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
 				Customer customer = customers.get(i);
 				ps.setLong(1, customer.getCustId());
 				ps.setString(2, customer.getName());
 				ps.setInt(3, customer.getAge() );
 			}
-			
-			@Override
+
 			public int getBatchSize() {
 				return customers.size();
 			}

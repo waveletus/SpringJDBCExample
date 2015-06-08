@@ -18,5 +18,10 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="customerNameSimpleDAO" class="com.mkyong.customer.dao.impl.SimpleJdbcCustomerNameDAO">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
+	<!--
+	<bean id="customerNameSimpleDAOH2" class="com.mkyong.customer.dao.impl.SimpleJdbcCustomerNameDAO">
+		<property name="h2DataSource" ref="h2DataSource" />
+	</bean>
+	-->
 </beans>
